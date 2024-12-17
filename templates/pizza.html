@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello HTML Templates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pizza.css') }}">
+</head>
+<body>
+    <h1>Victomort's Pizza Emporium</h1>
+    <div class="container">
+        <div class="pizza-selection">
+            <div class="pizza-options">
+                <label>Choose your pizza:</label>
+                <div class="selection-boxes" id="pizza-type">
+                    <div class="selection-box" data-value="cheese">
+                        <img src="{{ url_for('static', filename='images/cheese.jpg') }}" alt="Cheese Pizza">
+                        <p>Cheese - $8.00</p>
+                        <p>A delicious cheese pizza topped with mozzarella cheese.</p>
+                    </div>
+                    <div class="selection-box" data-value="pepperoni">
+                        <img src="{{ url_for('static', filename='images/pepperoni.jpg') }}" alt="Pepperoni Pizza">
+                        <p>Pepperoni - $9.00</p>
+                        <p>A classic pizza topped with pepperoni slices.</p>
+                    </div>
+                    <div class="selection-box" data-value="hawaiian">
+                        <img src="{{ url_for('static', filename='images/hawaiian.jpg') }}" alt="Hawaiian Pizza">
+                        <p>Hawaiian - $10.00</p>
+                        <p>A tropical delight with ham and pineapple.</p>
+                    </div>
+                    <div class="selection-box" data-value="meatlovers">
+                        <img src="{{ url_for('static', filename='images/meatlovers.jpg') }}" alt="Meatlovers Pizza">
+                        <p>Meatlovers - $11.00</p>
+                        <p>A hearty pizza topped with sausage, bacon, and ham.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pizza-options">
+                <label>Choose the size:</label>
+                <div class="selection-boxes" id="pizza-size">
+                    <div class="selection-box" data-value="small">Small</div>
+                    <div class="selection-box" data-value="medium">Medium</div>
+                    <div class="selection-box" data-value="large">Large</div>
+                </div>
+            </div>
+            <div class="pizza-options">
+                <label>Choose the crust:</label>
+                <div class="selection-boxes" id="pizza-crust">
+                    <div class="selection-box" data-value="regular">Regular</div>
+                    <div class="selection-box" data-value="thin">Thin (+$1.00)</div>
+                    <div class="selection-box" data-value="thick">Thick (+$1.00)</div>
+                </div>
+            </div>
+            <div class="pizza-options">
+                <label for="pizza-quantity">Quantity:</label>
+                <input type="number" id="pizza-quantity" value="1" min="1">
+            </div>
+            <div class="pizza-options">
+                <p id="pizza-price">Price: $8.00</p>
+            </div>
+            <button id="add-to-cart">Add to Cart</button>
+        </div>
+        <div id="cart-section">
+            <h2>Cart</h2>
+            <div id="cart">
+                <p>No items in cart.</p>
+            </div>
+            <p id="total-price">Total: $0.00</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/pizza.js') }}"></script>
+</body>
+</html>
